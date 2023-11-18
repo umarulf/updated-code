@@ -8,39 +8,36 @@ import {default as api} from '../store/apiSlice';
  
 Chart.register(ArcElement);
  
+
 export default function Graph() {
- 
-  const { data, isFetching , isSuccess, isError } = api.useGetLabelsQuery()
+  const userId = localStorage.getItem('userId'); // Retrieve userId from localStorage
+  const { data, isFetching, isSuccess, isError } = api.useGetLabelsQuery(userId); // Pass userId to the query
+
   let graphData;
- 
- 
- 
-  if(isFetching){
+
+  if (isFetching) {
     graphData = <div>Fetching</div>;
-  }else if(isSuccess){
+  } else if (isSuccess) {
     graphData = <Doughnut {...chart_Data(data)}></Doughnut>;
-  }else if(isError){
-    graphData = <div>Error</div>
+  } else if (isError) {
+    graphData = <div>Error</div>;
   }
- 
- 
+
   return (
     <div className="flex justify-content max-w-xs mx-auto">
-        <div className="item">
-            <div className="chart relative">
-                {graphData}
-                <h3 className='mb-4 font-bold title'>Total
-                    <span className='block text-3xl text-emerald-400'>${getTotal(data) ?? 0}</span>
-                </h3>
-            </div>  
- 
-            <div className="flex flex-col py-10 gap-4">
-                {/* Labels */}
-                <Labels></Labels>
-            </div>
+      <div className="item">
+        <div className="chart relative">
+          {graphData}
+          <h3 className='mb-4 font-bold title'>Total
+            <span className='block text-3xl text-emerald-400'>${getTotal(data) ?? 0}</span>
+          </h3>
         </div>
+
+        <div className="flex flex-col py-10 gap-4">
+          {/* Labels */}
+          <Labels></Labels>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
- 
- 

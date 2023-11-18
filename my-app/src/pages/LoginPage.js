@@ -31,18 +31,21 @@ const LoginPage = () => {
       });
 
       // Log the response status and data
-      console.log("Response status:", response.status);
+      console.log('Response status:', response.status);
 
       // Parse the response data assuming it's in JSON format
       const responseData = await response.json();
-      console.log("Response data:", responseData);
+      console.log('Response data:', responseData);
 
       if (!response.ok) {
         // Handle authentication failure
         console.error('Authentication failed');
-        setSuccess("False");
+        setSuccess('False');
         return;
       }
+
+      // Store the user ID in local storage
+      localStorage.setItem('userId', responseData.userId);
 
       // Log the user ID from the successful login
       console.log('User ID:', responseData.userId);
@@ -85,7 +88,7 @@ const LoginPage = () => {
             />
           </label>
 
-          {success && <p className='alert'>Invalid login</p>}
+          {success && <p className="alert">Invalid login</p>}
 
           <button type="submit" className="login-button">
             Log in
@@ -94,7 +97,10 @@ const LoginPage = () => {
       </div>
 
       <p className="signup-link">
-        Don't have an account? <Link to="/signup" className="signup-link-text">Sign up</Link>
+        Don't have an account?{' '}
+        <Link to="/signup" className="signup-link-text">
+          Sign up
+        </Link>
       </p>
     </div>
   );
