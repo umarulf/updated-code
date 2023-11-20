@@ -7,7 +7,7 @@ import SignupPage from './pages/SignupPage';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App  ">
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/app" element={<AppPage />} />
@@ -19,3 +19,4 @@ function App() {
 }
  
 export default App;
+

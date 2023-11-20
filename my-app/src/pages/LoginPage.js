@@ -60,6 +60,7 @@ const LoginPage = () => {
   };
 
   return (
+    <div className="login bg-black h-screen">
     <div className="login-container">
       <h1 className="login-heading">Login Page</h1>
 
@@ -102,6 +103,7 @@ const LoginPage = () => {
           Sign up
         </Link>
       </p>
+    </div>
     </div>
   );
 };

@@ -24,7 +24,7 @@ export default function Graph() {
   }
 
   return (
-    <div className="flex justify-content max-w-xs mx-auto">
+    <div className="flex justify-content max-w-xs pt-6 mx-auto">
       <div className="item">
         <div className="chart relative">
           {graphData}
@@ -33,7 +33,7 @@ export default function Graph() {
           </h3>
         </div>
 
-        <div className="flex flex-col py-10 gap-4">
+        <div className="flex flex-col pt-3 gap-4">
           {/* Labels */}
           <Labels></Labels>
         </div>

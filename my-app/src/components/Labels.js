@@ -21,16 +21,17 @@ export default function Labels() {
     }
  
   return (
-    <>
- 
+    <div className="flex flex-col pt-2 pb-20 gap-2">
+        <h1 className=' font-bold text-xl'>Overview</h1>
         {Transactions}
-    </>
+    </div>
   )
 }
  
 function LabelComponent({ data }){
     if(!data) return <></>;
     return (
+        
         <div className="labels flex justify-between">
             <div className="flex gap-2">
                 <div className='w-6 h-2 rounded py-3' style={{background: data.color ?? '#f9c74f'}}></div>

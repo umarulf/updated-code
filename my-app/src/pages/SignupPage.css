@@ -1,27 +1,28 @@
 /* SignupPage.css */
- 
+
 .signup-container {
   max-width: 400px;
   margin: auto;
   padding: 20px;
+
   text-align: center;
-  background-color: #fff; /* Set background color for the entire container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-  border-radius: 8px; /* Add border radius for rounded corners */
+  background-color: #f8f8f8; /* Light gray background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: #333; /* Text color */
 }
 
 .signup-heading {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333; /* Adjust the color based on Apple's design */
+  color: #4a4a4a; /* Dark gray text color */
 }
 
 .signup-box {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px; /* Adjust padding for inner content */
+  padding: 20px;
 }
 
 .signup-form {
@@ -33,7 +34,7 @@
   margin-bottom: 10px;
   text-align: left;
   font-size: 14px;
-  color: #666; /* Adjust the color based on Apple's design */
+  color: #666; /* Lighter gray text color */
 }
 
 .signup-input {
@@ -43,11 +44,13 @@
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: #fff; /* White input background */
+  color: #333; /* Dark gray text color */
 }
 
 .signup-button {
-  background-color: #0070c9; /* Adjust the color based on Apple's design */
-  color: #fff; /* Adjust the color based on Apple's design */
+  background-color: #009688; /* Teal color */
+  color: #fff;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -56,22 +59,22 @@
 }
 
 .signup-button:hover {
-  background-color: #034a90; /* Adjust the color based on Apple's design */
+  background-color: #00796b; /* Darker teal on hover */
 }
 
 .login-link {
   margin-top: 20px;
   font-size: 14px;
-  color: #333; /* Adjust the color based on Apple's design */
+  color: #666; /* Lighter gray text color */
 }
 
 .login-link-text {
-  color: #0070c9; /* Adjust the color based on Apple's design */
+  color: #009688; /* Teal color */
   text-decoration: none;
   font-weight: bold;
 }
 
 .modal-content p {
-  color: #ff0000; /* Light red color */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Shadow for text */
+  color: #ff0000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
