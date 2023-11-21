@@ -1,14 +1,19 @@
 import React from "react";
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import {  useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 import Graph from "../components/Graph";
 import Form from "../components/Form";
 import './AppPage.css';
 
 function AppPage() {
+
+  const navigate = useNavigate();
   // Function to handle logout (if needed)
   const handleLogout = () => {
     // Additional logout logic can be added here (e.g., clearing local storage)
-    console.log("User logged out");
+   // Clear the user ID from local storage
+    navigate('/');
+    window.location.reload(); // Reload the window
+    
   };
 
   return (
@@ -20,11 +25,11 @@ function AppPage() {
   
         {/* Logout Button */}
         <div className="logout-button">
-          <Link to="/" onClick={handleLogout}>
-            <button className="border py-2 px-4 text-white bg-red-500 hover:bg-red-600 rounded-md">
+        
+            <button onClick={handleLogout} className="border py-2 px-4 text-white bg-red-500 hover:bg-red-600 rounded-md">
               Logout
             </button>
-          </Link>
+          
         </div>
   
         {/* Grid columns */}

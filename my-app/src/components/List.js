@@ -36,38 +36,38 @@ export default function List() {
 }
 
 function Transaction({ category, handler, showDetails }) {
-  if (!category) return null;
-
-  const { id, _id, name, color, amount, date, type } = category;
-
-  return (
-    <div className="item flex bg-gray-50 py-2 rounded-r" style={{ borderRight: `8px solid ${color ?? '#e5e5e5'}` }}>
-      <button className='ml-4' onClick={() => handler(id)}>
-        <box-icon data-id={_id ?? ''} color={color ?? '#e5e5e5'} size="22px" name="trash"></box-icon>
-      </button>
-      <div>
-        <table>
-          <thead>
-            {showDetails && (
-              <tr>
-                <th className='px-14'>Spendings</th>
-                <th className='px-10'>Category</th>
-                <th className='px-10'>Date</th>
-                <th className='px-10'>Amount</th>
+    if (!category) return null;
+  
+    const { id, _id, name, color, amount, date, type } = category;
+  
+    return (
+      <div className="item flex bg-gray-50 py-2 rounded-r gap-2" style={{ borderRight: `8px solid ${color ?? '#e5e5e5'}` }}>
+        <button className='ml-4' onClick={() => handler(id)}>
+          <box-icon data-id={_id ?? ''} color={color ?? '#e5e5e5'} size="22px" name="trash"></box-icon>
+        </button>
+        <div>
+          <table className="w-full" style={{ tableLayout: 'fixed' }}>
+            <thead>
+              {showDetails && (
+                <tr>
+                  <th className='px-4 py-2 w-[180px]'>Spendings</th>
+                  <th className='px-4 py-2 w-[154px]'>Category</th>
+                  <th className='px-4 py-2 w-[120px]'>Date</th>
+                  <th className='px-4 py-2 w-[143px]'>Amount</th>
+                </tr>
+              )}
+            </thead>
+            <tbody>
+              <tr> 
+                <td className='px-4 py-2 overflow-hidden overflow-ellipsis whitespace-nowrap'>{name}</td>
+                <td className='px-4 py-2 overflow-hidden overflow-ellipsis whitespace-nowrap'>{type}</td>
+                <td className='px-4 py-2 overflow-hidden overflow-ellipsis whitespace-nowrap'>{date}</td>
+                <td className='px-4 py-2 overflow-hidden overflow-ellipsis whitespace-nowrap'>{amount}</td>
               </tr>
-            )}
-          </thead>
-          <tbody>
-            <tr>
-              <td className='px-14'>{name}</td>
-              <td className='px-10'>{type}</td>
-              <td className='px-10'>{date}</td>
-              <td className='px-10'>{amount}</td>
-            </tr>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
+  
