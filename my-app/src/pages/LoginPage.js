@@ -61,49 +61,49 @@ const LoginPage = () => {
 
   return (
     <div className="login bg-black h-screen">
-    <div className="login-container">
-      <h1 className="login-heading">Login Page</h1>
+      <div className="login-container">
+        <h1 className="login-heading">Login Page</h1>
 
-      <div className="login-box">
-        <form className="login-form" onSubmit={handleLogin}>
-          <label className="input-label">
-            Email:
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="login-input"
-              required
-            />
-          </label>
-          <label className="input-label">
-            Password:
-            <input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="login-input"
-              required
-            />
-          </label>
+        <div className="login-box">
+          <form className="login-form" onSubmit={handleLogin}>
+            <label className="input-label">
+              Email:
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="login-input"
+                required
+              />
+            </label>
+            <label className="input-label">
+              Password:
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="login-input"
+                required
+              />
+            </label>
 
-          {success && <p className="alert">Invalid login</p>}
+            {success && <p className="alert">Invalid login</p>}
 
-          <button type="submit" className="login-button">
-            Log in
-          </button>
-        </form>
+            <button type="submit" className="login-button">
+              Log in
+            </button>
+          </form>
+        </div>
+
+        <p className="signup-link">
+          Don't have an account?{' '}
+          <Link to="/signup" className="signup-link-text">
+            Sign up
+          </Link>
+        </p>
       </div>
-
-      <p className="signup-link">
-        Don't have an account?{' '}
-        <Link to="/signup" className="signup-link-text">
-          Sign up
-        </Link>
-      </p>
-    </div>
     </div>
   );
 };
